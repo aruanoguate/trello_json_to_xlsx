@@ -1,0 +1,14 @@
+{
+    "name": "trello_importer",
+    "version": "1.0.0",
+    "author": {
+        "name": "Alvaro Ruano",
+        "email": "alvaro.ruano90@outlook.com"
+    },
+    "dependencies": {
+        "underscore": "*",
+        "dateformat": "*",
+        "xlsx": "*",
+        "xlsx-style": "*"
+    }
+}
