@@ -6,9 +6,9 @@
         "email": "alvaro.ruano90@outlook.com"
     },
     "dependencies": {
-        "underscore": "*",
-        "dateformat": "*",
-        "xlsx": "*",
-        "xlsx-style": "*"
+        "dateformat": "^3.0.3",
+        "underscore": "^1.8.3",
+        "xlsx": "^0.12.3",
+        "xlsx-style": "^0.8.13"
     }
 }
