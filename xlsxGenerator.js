@@ -7,7 +7,7 @@ var path = require('path');
 // A function is exported to generate an XLSX file from
 // the configuration received on "columnsConfiguration" with
 // the data present in "cards"
-module.exports = function(fileLocation, fileName, cards, columnsConfiguration){
+module.exports = function (fileLocation, fileName, cards, columnsConfiguration, rowsCellStyle) {
     // The data will be arranged in an array of arrays
     var table = [];
 
@@ -15,10 +15,10 @@ module.exports = function(fileLocation, fileName, cards, columnsConfiguration){
     // and the columns info configuration is constructed
     var headerRow = [];
     var columnsInfo = [];
-    _.each(columnsConfiguration, function(columnConfiguration){
+    _.each(columnsConfiguration, function (columnConfiguration) {
         // the row header text is added to the first row
         headerRow.push(columnConfiguration.columnName);
-        
+
         // an object with the information for the column is created
         var columnInfo = { wch: undefined, hidden: false }
         if (columnConfiguration.width)
@@ -28,9 +28,9 @@ module.exports = function(fileLocation, fileName, cards, columnsConfiguration){
     table.push(headerRow);
 
     // The body of the file is filled using the filler functions provided in the configuration
-    _.each(cards, function(card){
+    _.each(cards, function (card) {
         var row = [];
-        _.each(columnsConfiguration, function(columnConfiguration){
+        _.each(columnsConfiguration, function (columnConfiguration) {
             row.push(columnConfiguration.filler(card));
         });
         table.push(row);
@@ -46,17 +46,35 @@ module.exports = function(fileLocation, fileName, cards, columnsConfiguration){
     var defaultCellStyle = fontsGenerator.generateDefaulCellStyle();
     var headerCellStyle = fontsGenerator.generateHeaderCellStyle();
 
+    // If no additional cell styles are provided, the object is assinged 
+    // with a null object to avoid errors in the loop below
+    if (!rowsCellStyle)
+        rowsCellStyle = [];
+
     // To apply the style to all the rows
     for (cellAddress in workSheet){
+        // If the property is not a cell, go to the next property
         if (cellAddress[0] == '!')
             continue;
-        
-        // If the row# is 0 then is header
-        if (xlsx.utils.decode_cell(cellAddress).r == 0)
+
+        // The row number is calculated
+        var rowNumber = xlsx.utils.decode_cell(cellAddress).r;
+
+        // If a cell style is received for the current row, it's used
+        if (rowsCellStyle[rowNumber]) {
+            workSheet[cellAddress].s = rowsCellStyle[rowNumber];
+            continue;
+        }
+
+        // If the row# is 0 then the header Cell Style is used
+        if (rowNumber == 0) {
             workSheet[cellAddress].s = headerCellStyle;
-        else
-            workSheet[cellAddress].s = defaultCellStyle;
-    };
+            continue;
+        }
+
+        // The default cell style is used 
+        workSheet[cellAddress].s = defaultCellStyle;
+    }
 
     // Create a workbook and append the already created worksheet
     var workBook = xlsx.utils.book_new();

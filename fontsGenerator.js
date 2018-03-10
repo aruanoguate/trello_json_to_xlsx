@@ -1,15 +1,15 @@
 
 const white = { rgb: "00FFFFFF" };
-const black = { rgb: "00000000" };
+const black = {  rgb: "00000000" };
 
 // Function needed to create a default format for all the cells
-var generateDefaulCellStyle = function(){
+var generateDefaulCellStyle = function () {
     var defaultCellStyle = {
         fill: {
             patternType: "solid",
             fgColor: white
         },
-        font: { 
+        font: {
             name: "Calibri",
             color: black,
             sz: 12,
@@ -32,7 +32,7 @@ var generateDefaulCellStyle = function(){
 };
 
 // Function needed to created a format for the header cells
-var generateHeaderCellStyle = function(){
+var generateHeaderCellStyle = function () {
     var headerCellStyle = generateDefaulCellStyle();
 
     headerCellStyle.fill.fgColor = black;
