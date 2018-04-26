@@ -78,10 +78,12 @@ var extractTextValueNew = function(objectWithPlugin, idCustomField){
     if (!pluginFields.value)
         return '';
     
-    if (!pluginFields.value.text)
+    if (pluginFields.value.text)
+        return pluginFields.value.text;
+    else if (pluginFields.value.number)
+        return pluginFields.value.number;
+    else
         return '';
-
-    return pluginFields.value.text;
 };
 
 // To export all the functions
