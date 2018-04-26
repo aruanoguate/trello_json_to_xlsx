@@ -54,7 +54,39 @@ var extractFromCatalog = function(objectWithPlugin, idPlugin, fieldName, trelloD
     return collectionSearcher.getCommaSeparatedList(pluginCatalog.o, [textValue]);
 };
 
+var extractParsedNew = function(objectWithPlugin, idCustomField){
+    var defaultEmptyObject = {};
+    
+    if (!objectWithPlugin.customFieldItems)
+        return defaultEmptyObject;
+
+    var rawPluginData = _.findWhere(objectWithPlugin.customFieldItems, { idCustomField: idCustomField} );
+
+    if (!rawPluginData)
+        return defaultEmptyObject;
+
+    return rawPluginData;
+};
+
+// Extracts directly the value stored for the specific field
+var extractTextValueNew = function(objectWithPlugin, idCustomField){
+    var pluginFields = extractParsedNew(objectWithPlugin, idCustomField);
+
+    if (!pluginFields)
+        return '';
+
+    if (!pluginFields.value)
+        return '';
+    
+    if (!pluginFields.value.text)
+        return '';
+
+    return pluginFields.value.text;
+};
+
 // To export all the functions
 module.exports.extractParsed = extractParsed;
 module.exports.extractTextValue = extractTextValue;
 module.exports.extractFromCatalog = extractFromCatalog;
+module.exports.extractParsedNew = extractParsedNew;
+module.exports.extractTextValueNew = extractTextValueNew;
