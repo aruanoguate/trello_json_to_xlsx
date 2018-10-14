@@ -1,14 +1,33 @@
 {
-    "name": "trello_importer",
-    "version": "1.0.0",
-    "author": {
-        "name": "Alvaro Ruano",
-        "email": "alvaro.ruano90@outlook.com"
-    },
-    "dependencies": {
-        "dateformat": "^3.0.3",
-        "underscore": "^1.8.3",
-        "xlsx": "^0.12.3",
-        "xlsx-style": "^0.8.13"
-    }
+  "name": "trello_json_to_xlsx",
+  "version": "1.0.0",
+  "author": "Alvaro Ruano <alvaro.ruano90@outlook.com>",
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "underscore": "^1.8.3",
+    "xlsx": "^0.12.3",
+    "xlsx-style": "^0.8.13"
+  },
+  "description": "Tool to generate an XLSX report from a Json file exported from Trello",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aruanoguate/trello_json_to_xlsx.git"
+  },
+  "keywords": [
+    "trello",
+    "json",
+    "xlsx",
+    "excel",
+    "export"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/aruanoguate/trello_json_to_xlsx/issues"
+  },
+  "homepage": "https://github.com/aruanoguate/trello_json_to_xlsx#readme"
 }
