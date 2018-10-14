@@ -15,6 +15,5 @@ The below modules are included into this package:
 
 ## Support
 
-In case you need help, you can contact me at [alvaro.ruano90@outlook.com](mailto:alvaro.ruano90@outlook.com)
+In case you need help, you can contact Alvaro Ruano at [alvaro.ruano90@outlook.com](mailto:alvaro.ruano90@outlook.com)
 
-Alvaro Ruano
