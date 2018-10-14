@@ -15,7 +15,7 @@ The below modules are included into this package:
 
 ## Usage
 
-The modules specified above are helpers to simplify the of generating a report. You're in charge of orchestating all the steps, from the Json read to the XLSX write. The best way to explain the usage is with examples, so please review the examples described below which can be found on the _examples_ folder.
+The modules specified above are helpers to simplify the task of generating a report. You're in charge of orchestating all the steps, from the Json read to the XLSX write. The best way to explain the usage is with examples, so please review the examples described below which can be found on the _examples_ folder.
 
 ### Example 001
 
