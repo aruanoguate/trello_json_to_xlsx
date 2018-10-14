@@ -1,0 +1,14 @@
+{
+  "name": "example_001",
+  "version": "1.0.0",
+  "description": "An example to show how the trello_json_to_xlsx module can be used",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alvaro Ruano",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "license": "Apache-2.0"
+}
