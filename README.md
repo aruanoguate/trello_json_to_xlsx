@@ -1,5 +1,5 @@
 # trello_json_to_xlsx
-This group of modules was originally created as part of another project where a [XLSX](http://fileformat.wikia.com/wiki/XLSX) report is generated with information extracted from a Json file exported from a [Trello](https://trello.com/) board, then the generic methods where extracted to create this repository.
+This repository includes various Javascript modules which help on the creation of a [XLSX](http://fileformat.wikia.com/wiki/XLSX) file with the information from a JSON file exported from a [Trello](https://trello.com/) board. This group of modules was originally created as part of another project, then the generic methods where extracted to create this repository.
 
 Feel free to improve whatever that you want. :)
 
